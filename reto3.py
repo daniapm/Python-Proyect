@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from colorama import init, Fore, Style
 """programa que permita realizar el proceso de ingreso de productos a un inventario de la 
    empresa Cloudata SAS."""
 #creacion de variables
@@ -26,8 +25,7 @@ costo_sin_flete = 0
 total_costo_sin_flete = 0
 #ciclo for para pedir por pantalla los 5 productos
 for i in range(1, 6):
-    print(Fore.MAGENTA + "Producto", i) #agregando color
-    print(Style.RESET_ALL, end = "")
+    print("Producto", i) #agregando color
     #Pidiendo datos por teclado
     nombre.append(str(input(f"Por favor ingresa el nombre del producto {i}: ")))
     while True:
@@ -35,10 +33,9 @@ for i in range(1, 6):
             codigo.append(int(input(f"Por favor ingresa el codigo del producto {i}: ")))
             break
         except (TypeError, ValueError):
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Fore.CYAN + "Opp! el codigo debe ser un dato de tipo numerico")
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Style.RESET_ALL, end = "")
+            print("-----------------------------------------------")
+            print("Opp! el codigo debe ser un dato de tipo numerico")
+            print("-----------------------------------------------")
     while True:
         try:
             tipo_p = (int(input(f"Por favor ingresa el tipo de producto. 1(fisico) o 2(servicio) {i}: ")))
@@ -46,13 +43,11 @@ for i in range(1, 6):
                 tipo_producto.append(tipo_p)
                 break
             else:
-                print(Fore.CYAN + "Opp! debes ingresar la opcion 1 o 2")
-                print(Style.RESET_ALL, end = "")
+                print("Opp! debes ingresar la opcion 1 o 2")
         except (TypeError, ValueError):
-            print(Fore.CYAN + "-------------------------------------------------------")
-            print(Fore.CYAN + "Opp! el tipo de producto debe ser un dato de tipo numerico")
-            print(Fore.CYAN + "-------------------------------------------------------")
-            print(Style.RESET_ALL, end = "")
+            print("-------------------------------------------------------")
+            print("Opp! el tipo de producto debe ser un dato de tipo numerico")
+            print("-------------------------------------------------------")
     while True:
         try:
             tipo_f = (int(input(f"Por favor ingresa el tipo de flete. 1(nacional) o 2(internacional) {i}: ")))
@@ -60,31 +55,27 @@ for i in range(1, 6):
                 tipo_flete.append(tipo_f)
                 break
             else:
-                print(Fore.CYAN + "Opp! debes ingresar la opcion 1 o 2")
-                print(Style.RESET_ALL, end = "")
+                print("Opp! debes ingresar la opcion 1 o 2")
         except (TypeError, ValueError):
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Fore.CYAN + "Opp! el tipo de flete debe ser un dato numerico")
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Style.RESET_ALL, end = "")
+            print("-----------------------------------------------")
+            print("Opp! el tipo de flete debe ser un dato numerico")
+            print("-----------------------------------------------")
     while True:
         try:
             cantidad_producto.append(int(input(f"Por favor ingresa la cantidad producto {i}: ")))
             break
         except (TypeError, ValueError):
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Fore.CYAN + "Opp! la cantidad del producto debe ser un dato numerico")
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Style.RESET_ALL, end = "")
+            print("-----------------------------------------------")
+            print("Opp! la cantidad del producto debe ser un dato numerico")
+            print("-----------------------------------------------")
     while True:
         try:
             costo_sin_iva.append(float(input(f"Por favor ingresa el costo sin iva del producto {i}: ")))
             break
         except (TypeError, ValueError):
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Fore.CYAN + "Opp! el costo sin iva debe ser un dato numerico")
-            print(Fore.CYAN + "-----------------------------------------------")
-            print(Style.RESET_ALL, end = "")
+            print("-----------------------------------------------")
+            print("Opp! el costo sin iva debe ser un dato numerico")
+            print("-----------------------------------------------")
     #condicionales para definir porcentaje de ganancia dependiendo el tipo de flete
     for tipo in tipo_producto:
         if (tipo == 2):
@@ -107,11 +98,10 @@ for i in range(1, 6):
 
     #Imprimimos los resultadosnpor producto
     print("=================================================================")
-    print(Fore.CYAN + f'Costo final por producto: {round(costo_Final_PorProducto, 2)}')
+    print(f'Costo final por producto: {round(costo_Final_PorProducto, 2)}')
     print(f"precio Venta Producto: {round(precio_Venta_PorProducto, 2)}")
     print(f"costo Total Producto: {round(costo_Total_Producto, 2)}")
     print(f"ganancia Por Producto: {round(ganancia_PorProducto, 2)}")
-    print(Style.RESET_ALL, end="")
     print("=================================================================")
     #calculamos totales de los productos ingresados
     total_de_los_productos += costo_Final_PorProducto
@@ -130,12 +120,12 @@ Escriba aqui su opcion: ")
 
 #Menu de opciones para el usuario
 if (opcion == "1"):
-    print(Fore.BLUE + f"Opción 1: Total costo productos:", total_de_los_productos)
+    print(f"Opción 1: Total costo productos:", total_de_los_productos)
 elif (opcion == "2"):
-    print(Fore.BLUE + f"Opción 2: Total ganancia productos:", ganacias_de_los_productos)
+    print(f"Opción 2: Total ganancia productos:", ganacias_de_los_productos)
 elif (opcion == "3"):
-    print(Fore.BLUE + f"Opción 3: Total flete productos:", fletes_productos)
+    print(f"Opción 3: Total flete productos:", fletes_productos)
 elif (opcion == "4"):
-    print(Fore.BLUE + f"Opción 4: Total valor venta productos:", valor_total_venta)
+    print(f"Opción 4: Total valor venta productos:", valor_total_venta)
 elif (opcion == "5"):
-    print(Fore.BLUE + f"Opción 5: Total costo productos sin incluir fletes:", total_costo_sin_flete)
+    print(f"Opción 5: Total costo productos sin incluir fletes:", total_costo_sin_flete)
