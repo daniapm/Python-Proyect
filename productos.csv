@@ -1,8 +1,0 @@
-productos = [
-{"nombre": "Computador portátil Dell", codigo: "1111", tipo_producto: "2", tipo_flete: "2", cantidad: "15", precio_costo: 1.200.000},
-{"nombre": "Disco solido 240gb adata", codigo: "2222", tipo_producto: "2", tipo_flete: "1", cantidad: "10", precio_costo: 150.000},
-{"nombre": "Memoria ram 8gb pc ddr4", codigo: "3333", tipo_producto: "2", tipo_flete: "2", cantidad: "25", precio_costo: 170.000},
-{"nombre": "Pantalla led 24 pulgadas janus", codigo: "4444", tipo_producto: "2", tipo_flete: "1", cantidad: "5", precio_costo: 450.000},
-{"nombre": "Servicio Instalación windows", codigo: "5555", tipo_producto: "1", tipo_flete: "1", cantidad: "50", precio_costo: 40.000}
-]
-
